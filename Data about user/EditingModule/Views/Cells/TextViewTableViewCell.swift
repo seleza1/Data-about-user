@@ -20,6 +20,8 @@ final class TextViewTableViewCell: UITableViewCell {
 
     private func setupViews() {
         selectionStyle = .none
+        nameLabel.font = Resources.Fonts.avenirNextRegular(with: 16)
+
         addView(nameLabel)
         contentView.addView(nameTextView)
     }
@@ -38,7 +40,8 @@ extension TextViewTableViewCell {
 
             nameTextView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
             nameTextView.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 10),
-            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
+            nameTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            nameTextView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0)
         ])
     }
 }
