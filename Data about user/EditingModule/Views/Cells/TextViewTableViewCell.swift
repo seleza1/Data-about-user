@@ -21,14 +21,33 @@ final class TextViewTableViewCell: UITableViewCell {
     private func setupViews() {
         selectionStyle = .none
         nameLabel.font = Resources.Fonts.avenirNextRegular(with: 16)
-
         addView(nameLabel)
         contentView.addView(nameTextView)
+        nameTextView.delegate = self
     }
 
     public func configure(name: String) {
         nameLabel.text = name
     }
+}
+extension TextViewTableViewCell: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        contentView.heightAnchor.constraint(equalTo: nameTextView.heightAnchor, multiplier: 1).isActive = true
+    }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == .lightGray {
+            textView.text = nil
+            textView.textColor = .black
+        }
+    }
+
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty { // ""
+            textView.text = "Введите данные"
+            textView.textColor = .lightGray
+        }
+    }
+
 }
 
 extension TextViewTableViewCell {
@@ -41,7 +60,6 @@ extension TextViewTableViewCell {
             nameTextView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
             nameTextView.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 10),
             nameTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            nameTextView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0)
         ])
     }
 }
