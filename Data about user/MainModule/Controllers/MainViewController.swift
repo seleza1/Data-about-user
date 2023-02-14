@@ -23,6 +23,7 @@ extension MainViewController {
             return UITableViewCell()
         }
         let nameFields = Resources.NameFields.allCases[indexPath.row].rawValue
+        cell.configure(name: nameFields)
         return cell
     }
 
