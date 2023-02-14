@@ -41,6 +41,8 @@ final class MainTableViewCell: UITableViewCell {
 extension MainTableViewCell {
     private func setConstraints() {
         NSLayoutConstraint.activate([
+
+            heightAnchor.constraint(greaterThanOrEqualToConstant: 44),
             nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             nameLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.35),

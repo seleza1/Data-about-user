@@ -1,7 +1,7 @@
 
 import UIKit
 
-final class MainViewController: UITableViewController {
+final class MainTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +22,13 @@ final class MainViewController: UITableViewController {
     }
 
     @objc func editingTapped() {
-        print("da")
+        navigationController?.pushViewController(EditingTableViewController(), animated: true)
     }
 
 
 }
 
-extension MainViewController {
+extension MainTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.idMainTableViewCell, for: indexPath) as? MainTableViewCell else {
             return UITableViewCell()
@@ -43,7 +43,7 @@ extension MainViewController {
     }
 }
 
-extension MainViewController {
+extension MainTableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         indexPath.row == 1 ? UITableView.automaticDimension : 44
     }
