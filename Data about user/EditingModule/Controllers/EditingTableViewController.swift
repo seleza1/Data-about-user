@@ -7,6 +7,8 @@ final class EditingTableViewController: UITableViewController {
         setupView()
         tableView.register(TextViewTableViewCell.self, forCellReuseIdentifier: TextViewTableViewCell.idTextViewCell)
         tableView.register(DatePickerTableViewCell.self, forCellReuseIdentifier: DatePickerTableViewCell.idDatePicker)
+        tableView.register(PickerViewTableViewCell.self, forCellReuseIdentifier: PickerViewTableViewCell.idPickerViewCell)
+
     }
 
     private func setupView() {
@@ -24,8 +26,6 @@ final class EditingTableViewController: UITableViewController {
     @objc func editingTapped() {
         print("da")
     }
-
-
 }
 
 extension EditingTableViewController {
@@ -47,21 +47,25 @@ extension EditingTableViewController {
             } else {
                 cell.configure(name: nameFields, scrollEnabled: true)
             }
-
             return cell
 
         case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DatePickerTableViewCell.idDatePicker, for: indexPath) as? DatePickerTableViewCell
             else {
                 return UITableViewCell()
-
+            }
+                cell.configure(name: nameFields)
+            return cell
+        case 4:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: PickerViewTableViewCell.idPickerViewCell, for: indexPath) as? PickerViewTableViewCell
+            else {
+                return UITableViewCell()
             }
                 cell.configure(name: nameFields)
             return cell
         default:
             return UITableViewCell()
         }
-
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,6 +84,4 @@ extension EditingTableViewController: NameTextViewProtocol {
         tableView.beginUpdates()
         tableView.endUpdates()
     }
-
-
 }
