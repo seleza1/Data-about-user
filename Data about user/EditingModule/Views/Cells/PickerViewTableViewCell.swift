@@ -25,11 +25,19 @@ final class PickerViewTableViewCell: UITableViewCell {
         nameLabel.font = Resources.Fonts.avenirNextRegular(with: 16)
         addView(nameLabel)
         genderTextField.inputView = genderPickerView
-        contentView.addView(genderTextField )
+        contentView.addView(genderTextField)
+        genderPickerView.genderDelegate = self
     }
 
     public func configure(name: String) {
         nameLabel.text = name
+    }
+}
+
+extension PickerViewTableViewCell: GenderPickerViewProtocol {
+    func didSelect(row: Int) {
+        genderTextField.text = Resources.Gender.allCases[row].rawValue
+        genderTextField.resignFirstResponder()
     }
 }
 

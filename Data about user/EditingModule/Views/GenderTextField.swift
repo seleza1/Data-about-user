@@ -12,10 +12,12 @@ final class GenderTextField: UITextField {
     }
 
     private func configure() {
-        placeholder = "Введите данные"
+        //placeholder = "Введите данные"
         textAlignment = .right
         tintColor = .clear
         font = Resources.Fonts.avenirNextRegular(with: 16)
+        let font = Resources.Fonts.avenirNextRegular(with: 16)
+        attributedPlaceholder = NSAttributedString(string: "Введите данные", attributes: [.foregroundColor: UIColor.lightGray, .font : font as Any])
     }
 
     override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
