@@ -17,4 +17,8 @@ final class GenderTextField: UITextField {
         tintColor = .clear
         font = Resources.Fonts.avenirNextRegular(with: 16)
     }
+
+    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        !isFirstResponder //
+    }
 }
