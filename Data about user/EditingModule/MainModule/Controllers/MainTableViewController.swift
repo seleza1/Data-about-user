@@ -22,7 +22,9 @@ final class MainTableViewController: UITableViewController {
     }
 
     @objc func editingTapped() {
-        navigationController?.pushViewController(EditingTableViewController(), animated: true)
+        let editingVC = EditingTableViewController()
+        navigationItem.backButtonTitle = "Назад"
+        navigationController?.pushViewController(editingVC, animated: true)
     }
 
 
@@ -30,11 +32,13 @@ final class MainTableViewController: UITableViewController {
 
 extension MainTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.idMainTableViewCell, for: indexPath) as? MainTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.idMainTableViewCell, for: indexPath) as? MainTableViewCell
+        else {
             return UITableViewCell()
         }
         let nameFields = Resources.NameFields.allCases[indexPath.row].rawValue
         cell.configure(name: nameFields)
+
         return cell
     }
 

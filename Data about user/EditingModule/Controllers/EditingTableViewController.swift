@@ -5,12 +5,12 @@ final class EditingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        tableView.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.idMainTableViewCell)
+        tableView.register(TextViewTableViewCell.self, forCellReuseIdentifier: TextViewTableViewCell.idTextViewCell)
     }
 
     private func setupView() {
-        title = "Просмотр"
-        view.backgroundColor = .red
+        title = "Редактировать"
+        view.backgroundColor = .white
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             title: "Сохранить",
@@ -29,11 +29,13 @@ final class EditingTableViewController: UITableViewController {
 
 extension EditingTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.idMainTableViewCell, for: indexPath) as? MainTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TextViewTableViewCell.idTextViewCell, for: indexPath) as? TextViewTableViewCell
+        else {
             return UITableViewCell()
         }
         let nameFields = Resources.NameFields.allCases[indexPath.row].rawValue
         cell.configure(name: nameFields)
+        
         return cell
     }
 

@@ -28,6 +28,7 @@ final class MainTableViewCell: UITableViewCell {
     }
 
     private func setupViews() {
+        selectionStyle = .none
         addView(nameLabel)
         addView(valueLabel)
 
