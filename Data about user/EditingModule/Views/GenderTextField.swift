@@ -14,6 +14,7 @@ final class GenderTextField: UITextField {
     private func configure() {
         placeholder = "Введите данные"
         textAlignment = .right
+        tintColor = .clear
         font = Resources.Fonts.avenirNextRegular(with: 16)
     }
 }
