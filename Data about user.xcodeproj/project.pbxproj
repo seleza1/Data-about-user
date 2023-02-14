@@ -13,6 +13,7 @@
 		CE254CC1299B700300038F22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE254CBF299B700300038F22 /* LaunchScreen.storyboard */; };
 		CE254CCE299B85DE00038F22 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CCD299B85DE00038F22 /* Resources.swift */; };
 		CE254CD1299B87DC00038F22 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CD0299B87DB00038F22 /* MainTableViewCell.swift */; };
+		CE254CD5299B8C9D00038F22 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CD4299B8C9D00038F22 /* UIView + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CE254CC2299B700300038F22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE254CCD299B85DE00038F22 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Resources.swift; path = ../../../../../Downloads/Resources.swift; sourceTree = "<group>"; };
 		CE254CD0299B87DB00038F22 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		CE254CD4299B8C9D00038F22 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		CE254CB3299B6FFF00038F22 /* Data about user */ = {
 			isa = PBXGroup;
 			children = (
+				CE254CD2299B8C5800038F22 /* Extension */,
 				CE254CC8299B715E00038F22 /* Applications */,
 				CE254CCC299B85CB00038F22 /* Resources */,
 				CE254CCA299B71F500038F22 /* MainModule */,
@@ -113,6 +116,22 @@
 				CE254CD0299B87DB00038F22 /* MainTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CE254CD2299B8C5800038F22 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CE254CD3299B8C6500038F22 /* UiKit */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CE254CD3299B8C6500038F22 /* UiKit */ = {
+			isa = PBXGroup;
+			children = (
+				CE254CD4299B8C9D00038F22 /* UIView + Extensions.swift */,
+			);
+			path = UiKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE254CD5299B8C9D00038F22 /* UIView + Extensions.swift in Sources */,
 				CE254CCE299B85DE00038F22 /* Resources.swift in Sources */,
 				CE254CB9299B6FFF00038F22 /* MainViewController.swift in Sources */,
 				CE254CD1299B87DC00038F22 /* MainTableViewCell.swift in Sources */,

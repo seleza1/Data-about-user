@@ -6,7 +6,7 @@ final class MainViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.idMainTableViewCell)
     }
 
     private func setupView() {
@@ -19,9 +19,10 @@ final class MainViewController: UITableViewController {
 
 extension MainViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.idMainTableViewCell, for: indexPath) as? MainTableViewCell else {
+            return UITableViewCell()
+        }
         let nameFields = Resources.NameFields.allCases[indexPath.row].rawValue
-
         return cell
     }
 
