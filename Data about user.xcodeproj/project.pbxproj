@@ -17,6 +17,7 @@
 		CE254CD9299B956800038F22 /* EditingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CD8299B956800038F22 /* EditingTableViewController.swift */; };
 		CE254CDD299BA7F800038F22 /* TextViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CDC299BA7F800038F22 /* TextViewTableViewCell.swift */; };
 		CE254CDF299BA9E500038F22 /* NameTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CDE299BA9E500038F22 /* NameTextView.swift */; };
+		CE254CE1299BC7F800038F22 /* DatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CE0299BC7F800038F22 /* DatePickerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CE254CD8299B956800038F22 /* EditingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingTableViewController.swift; sourceTree = "<group>"; };
 		CE254CDC299BA7F800038F22 /* TextViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewTableViewCell.swift; sourceTree = "<group>"; };
 		CE254CDE299BA9E500038F22 /* NameTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextView.swift; sourceTree = "<group>"; };
+		CE254CE0299BC7F800038F22 /* DatePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				CE254CDC299BA7F800038F22 /* TextViewTableViewCell.swift */,
+				CE254CE0299BC7F800038F22 /* DatePickerTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				CE254CDD299BA7F800038F22 /* TextViewTableViewCell.swift in Sources */,
 				CE254CDF299BA9E500038F22 /* NameTextView.swift in Sources */,
 				CE254CB5299B6FFF00038F22 /* AppDelegate.swift in Sources */,
+				CE254CE1299BC7F800038F22 /* DatePickerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
