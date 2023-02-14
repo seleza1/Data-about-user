@@ -3,8 +3,13 @@ import UIKit
 
 final class MainTableViewCell: UITableViewCell {
 
-    private let nameLabel: UILabel = {
+    private let nameLabel = UILabel()
+
+    private let valueLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .right
+        label.text = "Test"
+        label.numberOfLines = 0
 
 
         return label
@@ -24,6 +29,7 @@ final class MainTableViewCell: UITableViewCell {
 
     private func setupViews() {
         addView(nameLabel)
+        addView(valueLabel)
 
     }
 
@@ -37,7 +43,12 @@ extension MainTableViewCell {
         NSLayoutConstraint.activate([
             nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            nameLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.35)
+            nameLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.35),
+
+            valueLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            valueLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+            valueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            valueLabel.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 10)
         ])
     }
 }

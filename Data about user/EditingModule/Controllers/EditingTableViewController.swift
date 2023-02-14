@@ -1,7 +1,6 @@
-
 import UIKit
 
-final class MainViewController: UITableViewController {
+final class EditingTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,10 +10,10 @@ final class MainViewController: UITableViewController {
 
     private func setupView() {
         title = "Просмотр"
-        view.backgroundColor = .white
+        view.backgroundColor = .red
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-            title: "Редактировать",
+            title: "Сохранить",
             style: .plain,
             target: self,
             action: #selector(editingTapped)
@@ -28,7 +27,7 @@ final class MainViewController: UITableViewController {
 
 }
 
-extension MainViewController {
+extension EditingTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.idMainTableViewCell, for: indexPath) as? MainTableViewCell else {
             return UITableViewCell()
@@ -43,9 +42,8 @@ extension MainViewController {
     }
 }
 
-extension MainViewController {
+extension EditingTableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         indexPath.row == 1 ? UITableView.automaticDimension : 44
     }
 }
-
