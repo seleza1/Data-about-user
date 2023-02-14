@@ -1,7 +1,14 @@
 
 import UIKit
 
+protocol GenderPickerViewProtocol: AnyObject {
+    func didSelect()
+}
+
 final class GenderPickerView: UIPickerView {
+
+    weak var genderDelegate: GenderPickerViewProtocol?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         delegate = self
@@ -15,16 +22,22 @@ final class GenderPickerView: UIPickerView {
 
 extension GenderPickerView: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        <#code#>
+        1
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        <#code#>
+        Resources.Gender.allCases.count
     }
 
 
 }
 
 extension GenderPickerView: UIPickerViewDelegate {
-    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        Resources.Gender.allCases[row].rawValue
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        genderDelegate?.didSelect()
+    }
 }
