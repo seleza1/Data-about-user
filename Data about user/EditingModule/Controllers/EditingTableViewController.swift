@@ -33,10 +33,24 @@ extension EditingTableViewController {
         else {
             return UITableViewCell()
         }
-        let nameFields = Resources.NameFields.allCases[indexPath.row].rawValue
-        cell.configure(name: nameFields)
         
-        return cell
+
+        switch indexPath.row {
+        case 0...2:
+            let nameFields = Resources.NameFields.allCases[indexPath.row].rawValue
+            cell.nameTextViewDelegate = self
+            if indexPath.row == 1 {
+                cell.configure(name: nameFields, scrollEnabled: false)
+            } else {
+                cell.configure(name: nameFields, scrollEnabled: true)
+
+            }
+
+            return cell
+        default:
+            return UITableViewCell()
+        }
+
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,4 +62,13 @@ extension EditingTableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         indexPath.row == 1 ? UITableView.automaticDimension : 44
     }
+}
+
+extension EditingTableViewController: NameTextViewProtocol {
+    func changeSize() {
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+
+
 }
