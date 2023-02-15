@@ -51,8 +51,14 @@ final class EditingViewController: UIViewController {
     }
 
     @objc func backButtonTapped() {
-        presentChangeAlert { change in
-            print(change)
+        presentChangeAlert { [weak self] value in
+            if value {
+                print(self?.userModel)
+                self?.navigationController?.popViewController(animated: true)
+
+            } else {
+                self?.navigationController?.popViewController(animated: false)
+            }
         }
     }
 
