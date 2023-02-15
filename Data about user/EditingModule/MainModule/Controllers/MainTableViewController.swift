@@ -25,7 +25,7 @@ final class MainTableViewController: UITableViewController {
             title: "Редактировать",
             style: .plain,
             target: self,
-            action: #selector(saveTapped)
+            action: #selector(editingTapped)
         )
     }
 

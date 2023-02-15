@@ -24,6 +24,7 @@
 		CE254CE9299CC6DC00038F22 /* EditingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CE8299CC6DC00038F22 /* EditingTableView.swift */; };
 		CEF2C4ED299CD5B100431C8E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2C4EC299CD5B100431C8E /* UserModel.swift */; };
 		CEF2C4F0299CD72300431C8E /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2C4EF299CD72300431C8E /* UserDefaultsHelper.swift */; };
+		CEF2C4F2299CFEF900431C8E /* UiViewController + Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2C4F1299CFEF900431C8E /* UiViewController + Extension .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		CE254CE8299CC6DC00038F22 /* EditingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingTableView.swift; sourceTree = "<group>"; };
 		CEF2C4EC299CD5B100431C8E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CEF2C4EF299CD72300431C8E /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		CEF2C4F1299CFEF900431C8E /* UiViewController + Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController + Extension .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				CE254CD4299B8C9D00038F22 /* UIView + Extensions.swift */,
+				CEF2C4F1299CFEF900431C8E /* UiViewController + Extension .swift */,
 			);
 			path = UiKit;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				CE254CE3299BCD0600038F22 /* PickerViewTableViewCell.swift in Sources */,
 				CEF2C4ED299CD5B100431C8E /* UserModel.swift in Sources */,
 				CE254CDF299BA9E500038F22 /* NameTextView.swift in Sources */,
+				CEF2C4F2299CFEF900431C8E /* UiViewController + Extension .swift in Sources */,
 				CE254CE9299CC6DC00038F22 /* EditingTableView.swift in Sources */,
 				CE254CB5299B6FFF00038F22 /* AppDelegate.swift in Sources */,
 				CE254CE7299BF0C800038F22 /* GenderTextField.swift in Sources */,
