@@ -10,7 +10,7 @@ final class UserDefaultsHelper {
         defaults.value(forKey: userKey) as? [String: String] ?? [:]
     }
 
-    static func saveUserValue(_ value: String, _ key: String) {
+    static func saveUserValue(_ key: String, _ value: String) {
         var userDictionary = getUserDictionary()
         userDictionary[key] = value
         defaults.set(userDictionary, forKey: userKey)

@@ -5,11 +5,25 @@ final class MainTableViewController: UITableViewController {
 
     private var userModel = UserModel()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        tableView.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.idMainTableViewCell)
+
+
+        tableView.register(
+            MainTableViewCell.self,
+            forCellReuseIdentifier: MainTableViewCell.idMainTableViewCell
+        )
+        
+        UserDefaultsHelper.saveUserValue(Resources.NameFields.firstName.rawValue, "name1")
+        UserDefaultsHelper.saveUserValue(Resources.NameFields.secondName.rawValue, "name2")
+        UserDefaultsHelper.saveUserValue(Resources.NameFields.thirdName.rawValue, "name3")
+        UserDefaultsHelper.saveUserValue(Resources.NameFields.birthday.rawValue, "birthday28.10")
+        UserDefaultsHelper.saveUserValue(Resources.NameFields.gender.rawValue, "Мужской")
+        getUserModel()
+
+
+        print(userModel)
     }
 
     private func setupView() {
@@ -28,6 +42,10 @@ final class MainTableViewController: UITableViewController {
         let editingVC = EditingViewController(userModel)
         navigationItem.backButtonTitle = "Назад"
         navigationController?.pushViewController(editingVC, animated: true)
+    }
+
+    private func getUserModel() {
+        userModel = UserDefaultsHelper.getUserModel()
     }
 
 
