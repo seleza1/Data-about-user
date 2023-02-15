@@ -4,11 +4,22 @@ final class EditingViewController: UIViewController {
 
     private let editingTableView = EditingTableView()
 
+    private var userModel = UserModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupView()
         setConstraints()
+    }
+
+    init(_ userModel: UserModel) {
+        self.userModel = userModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     private func setupView() {

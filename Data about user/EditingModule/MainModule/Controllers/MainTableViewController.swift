@@ -3,6 +3,9 @@ import UIKit
 
 final class MainTableViewController: UITableViewController {
 
+    private var userModel = UserModel()
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -22,7 +25,7 @@ final class MainTableViewController: UITableViewController {
     }
 
     @objc func editingTapped() {
-        let editingVC = EditingViewController()
+        let editingVC = EditingViewController(userModel)
         navigationItem.backButtonTitle = "Назад"
         navigationController?.pushViewController(editingVC, animated: true)
     }
