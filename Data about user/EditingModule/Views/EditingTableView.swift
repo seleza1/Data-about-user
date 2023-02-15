@@ -5,6 +5,7 @@ final class EditingTableView: UITableView {
 
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
+
         register(TextViewTableViewCell.self, forCellReuseIdentifier: TextViewTableViewCell.idTextViewCell)
         register(DatePickerTableViewCell.self, forCellReuseIdentifier: DatePickerTableViewCell.idDatePicker)
         register(PickerViewTableViewCell.self, forCellReuseIdentifier: PickerViewTableViewCell.idPickerViewCell)
@@ -23,9 +24,7 @@ final class EditingTableView: UITableView {
 extension EditingTableView: UITableViewDataSource {
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-
         let nameFields = Resources.NameFields.allCases[indexPath.row].rawValue
-
 
         switch indexPath.row {
         case 0...2:
