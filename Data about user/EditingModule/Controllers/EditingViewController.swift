@@ -11,6 +11,7 @@ final class EditingViewController: UIViewController {
 
         setupView()
         setConstraints()
+        print(userModel)
     }
 
     init(_ userModel: UserModel) {
@@ -31,13 +32,13 @@ final class EditingViewController: UIViewController {
             title: "Сохранить",
             style: .plain,
             target: self,
-            action: #selector(editingTapped)
+            action: #selector(saveTapped)
         )
         view.addView(editingTableView)
 
     }
 
-    @objc func editingTapped() {
+    @objc func saveTapped() {
         print("da")
     }
 

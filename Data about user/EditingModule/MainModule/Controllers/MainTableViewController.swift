@@ -7,23 +7,14 @@ final class MainTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
 
+        setupView()
+        getUserModel()
 
         tableView.register(
             MainTableViewCell.self,
             forCellReuseIdentifier: MainTableViewCell.idMainTableViewCell
         )
-        
-        UserDefaultsHelper.saveUserValue(Resources.NameFields.firstName.rawValue, "name1")
-        UserDefaultsHelper.saveUserValue(Resources.NameFields.secondName.rawValue, "name2")
-        UserDefaultsHelper.saveUserValue(Resources.NameFields.thirdName.rawValue, "name3")
-        UserDefaultsHelper.saveUserValue(Resources.NameFields.birthday.rawValue, "birthday28.10")
-        UserDefaultsHelper.saveUserValue(Resources.NameFields.gender.rawValue, "Мужской")
-        getUserModel()
-
-
-        print(userModel)
     }
 
     private func setupView() {
@@ -34,7 +25,7 @@ final class MainTableViewController: UITableViewController {
             title: "Редактировать",
             style: .plain,
             target: self,
-            action: #selector(editingTapped)
+            action: #selector(saveTapped)
         )
     }
 
