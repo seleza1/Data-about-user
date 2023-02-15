@@ -36,6 +36,9 @@ final class EditingViewController: UIViewController {
         )
         view.addView(editingTableView)
 
+        let backBarButtonItem = UIBarButtonItem.createCustomButton(ViewController: self, selector: #selector(backButtonTapped))
+        navigationItem.leftBarButtonItem = backBarButtonItem
+
     }
 
     @objc func saveTapped() {
@@ -44,6 +47,12 @@ final class EditingViewController: UIViewController {
         } else {
             presentSimpleAlert(title: "Ошибка", message: "Заполните ФИО, дата рождения, пол")
 
+        }
+    }
+
+    @objc func backButtonTapped() {
+        presentChangeAlert { change in
+            print(change)
         }
     }
 

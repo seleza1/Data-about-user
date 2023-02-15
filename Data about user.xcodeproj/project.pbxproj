@@ -25,6 +25,7 @@
 		CEF2C4ED299CD5B100431C8E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2C4EC299CD5B100431C8E /* UserModel.swift */; };
 		CEF2C4F0299CD72300431C8E /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2C4EF299CD72300431C8E /* UserDefaultsHelper.swift */; };
 		CEF2C4F2299CFEF900431C8E /* UiViewController + Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2C4F1299CFEF900431C8E /* UiViewController + Extension .swift */; };
+		CEF2C4F4299D016300431C8E /* UiBarButtonItem + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2C4F3299D016300431C8E /* UiBarButtonItem + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		CEF2C4EC299CD5B100431C8E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CEF2C4EF299CD72300431C8E /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		CEF2C4F1299CFEF900431C8E /* UiViewController + Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController + Extension .swift"; sourceTree = "<group>"; };
+		CEF2C4F3299D016300431C8E /* UiBarButtonItem + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiBarButtonItem + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			children = (
 				CE254CD4299B8C9D00038F22 /* UIView + Extensions.swift */,
 				CEF2C4F1299CFEF900431C8E /* UiViewController + Extension .swift */,
+				CEF2C4F3299D016300431C8E /* UiBarButtonItem + Extension.swift */,
 			);
 			path = UiKit;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				CE254CD9299B956800038F22 /* EditingViewController.swift in Sources */,
 				CE254CB9299B6FFF00038F22 /* MainTableViewController.swift in Sources */,
 				CE254CE5299BCE7E00038F22 /* GenderPickerView.swift in Sources */,
+				CEF2C4F4299D016300431C8E /* UiBarButtonItem + Extension.swift in Sources */,
 				CE254CD1299B87DC00038F22 /* MainTableViewCell.swift in Sources */,
 				CE254CDD299BA7F800038F22 /* TextViewTableViewCell.swift in Sources */,
 				CE254CE3299BCD0600038F22 /* PickerViewTableViewCell.swift in Sources */,

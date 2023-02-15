@@ -13,4 +13,22 @@ extension UIViewController {
         alertController.addAction(okAction)
         present(alertController, animated: true)
     }
+
+    func presentChangeAlert(completion: @escaping (Bool) -> Void) {
+        let alertController = UIAlertController(
+            title: "Данные были изменены",
+            message: "Вы желаете сохранить изменения, в противном случае внесенные правки будут отменены",
+            preferredStyle: .alert
+        )
+        let saveAction = UIAlertAction(title: "Сохранить", style: .default) { _ in
+            completion(true)
+        }
+
+        let skipAction = UIAlertAction(title: "Пропустить", style: .default) { _ in
+            completion(false)
+        }
+        alertController.addAction(saveAction)
+        alertController.addAction(skipAction)
+        present(alertController, animated: true)
+    }
 }
