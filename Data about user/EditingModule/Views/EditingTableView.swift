@@ -13,7 +13,6 @@ final class EditingTableView: UITableView {
         delegate = self
         dataSource = self
 
-        
     }
 
     required init?(coder: NSCoder) {

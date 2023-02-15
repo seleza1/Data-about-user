@@ -6,7 +6,7 @@ final class DatePickerTableViewCell: UITableViewCell {
     static var idDatePicker = "idDatePicker"
 
     private let nameLabel = UILabel()
-
+    
     private let datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date

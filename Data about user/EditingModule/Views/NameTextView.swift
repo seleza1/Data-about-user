@@ -19,7 +19,6 @@ final class NameTextView: UITextView {
         isScrollEnabled = false
         font = Resources.Fonts.avenirNextRegular(with: 16)
 
-
     }
 }
 

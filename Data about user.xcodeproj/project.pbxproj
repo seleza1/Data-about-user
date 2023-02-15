@@ -163,8 +163,8 @@
 		CE254CD6299B953F00038F22 /* EditingModule */ = {
 			isa = PBXGroup;
 			children = (
-				CEF2C4EE299CD70400431C8E /* Services */,
 				CE254CC8299B715E00038F22 /* Applications */,
+				CEF2C4EE299CD70400431C8E /* Services */,
 				CE254CCA299B71F500038F22 /* MainModule */,
 				CE254CDA299BA7CA00038F22 /* Views */,
 				CE254CD7299B955500038F22 /* Controllers */,

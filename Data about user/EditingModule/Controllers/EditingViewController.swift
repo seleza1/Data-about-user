@@ -3,7 +3,6 @@ import UIKit
 final class EditingViewController: UIViewController {
 
     private let editingTableView = EditingTableView()
-
     private var userModel = UserModel()
 
     override func viewDidLoad() {
