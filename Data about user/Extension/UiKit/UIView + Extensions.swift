@@ -1,9 +1,3 @@
-//
-//  UIView + Extensions.swift
-//  Data about user
-//
-//  Created by user on 14.02.2023.
-//
 
 import UIKit
 
