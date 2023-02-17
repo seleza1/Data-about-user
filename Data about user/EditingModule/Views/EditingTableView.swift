@@ -50,13 +50,13 @@ extension EditingTableView: UITableViewDataSource {
             guard let cell = self.dequeueReusableCell(DatePickerTableViewCell.self) else {
                 return UITableViewCell()
             }
-                cell.configure(name: nameFields)
+            cell.configure(name: nameFields, date: userModel.birthday.getDateFromString())
             return cell
         case 4:
             guard let cell = self.dequeueReusableCell(PickerViewTableViewCell.self) else {
                 return UITableViewCell()
             }
-                cell.configure(name: nameFields)
+            cell.configure(name: nameFields, value: userModel.gender)
             return cell
         default:
             return UITableViewCell()
