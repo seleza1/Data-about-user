@@ -32,11 +32,6 @@ extension EditingTableView: UITableViewDataSource {
 
         switch indexPath.row {
         case 0...2:
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: TextViewTableViewCell.idTextViewCell, for: indexPath) as? TextViewTableViewCell
-//            else {
-//                return UITableViewCell()
-//            }
-
             guard let cell = self.dequeueReusableCell(TextViewTableViewCell.self) else {
                 return UITableViewCell()
             }
@@ -47,24 +42,13 @@ extension EditingTableView: UITableViewDataSource {
                 cell.configure(name: nameFields, scrollEnabled: true)
             }
             return cell
-
         case 3:
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: DatePickerTableViewCell.idDatePicker, for: indexPath) as? DatePickerTableViewCell
-//            else {
-//                return UITableViewCell()
-//            }
-
             guard let cell = self.dequeueReusableCell(DatePickerTableViewCell.self) else {
                 return UITableViewCell()
             }
                 cell.configure(name: nameFields)
             return cell
         case 4:
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: PickerViewTableViewCell.idPickerViewCell, for: indexPath) as? PickerViewTableViewCell
-//            else {
-//                return UITableViewCell()
-//            }
-
             guard let cell = self.dequeueReusableCell(PickerViewTableViewCell.self) else {
                 return UITableViewCell()
             }
