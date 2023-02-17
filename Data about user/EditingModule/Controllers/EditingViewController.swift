@@ -40,12 +40,15 @@ final class EditingViewController: UIViewController {
     }
 
     @objc func saveTapped() {
-        if authFields() {
-            presentSimpleAlert(title: "Выполнено", message: "ВсЁ ок")
-        } else {
-            presentSimpleAlert(title: "Ошибка", message: "Заполните ФИО, дата рождения, пол")
 
-        }
+        print(editingTableView.getUserModel())
+//        if authFields() {
+//            presentSimpleAlert(title: "Выполнено", message: "ВсЁ ок")
+//        } else {
+//            presentSimpleAlert(title: "Ошибка", message: "Заполните ФИО, дата рождения, пол")
+//        }
+
+
     }
 
     @objc func backButtonTapped() {

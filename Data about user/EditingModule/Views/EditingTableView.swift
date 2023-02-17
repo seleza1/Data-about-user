@@ -83,6 +83,12 @@ extension EditingTableView: UITableViewDataSource {
         userModel.gender = genderCell.getCellValue()
 
     }
+
+    public func getUserModel() -> UserModel {
+        editUserModel()
+
+        return userModel
+    }
 }
 
 extension EditingTableView: UITableViewDelegate {
