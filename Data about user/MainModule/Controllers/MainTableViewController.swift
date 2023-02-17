@@ -45,7 +45,7 @@ extension MainTableViewController {
         }
         let nameFields = Resources.NameFields.allCases[indexPath.row].rawValue
         let value = UserDefaultsHelper.getUserValue(Resources.NameFields.allCases[indexPath.row].rawValue)
-        cell.configure(name: nameFields, value: value)
+        cell.configure(name: nameFields, value: value )
 
         return cell
     }

@@ -3,17 +3,14 @@ import UIKit
 
 final class EditingTableView: UITableView {
 
+    private var userModel = UserModel()
+
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
-
-//        register(TextViewTableViewCell.self, forCellReuseIdentifier: TextViewTableViewCell.idTextViewCell)
-//        register(DatePickerTableViewCell.self, forCellReuseIdentifier: DatePickerTableViewCell.idDatePicker)
-//        register(PickerViewTableViewCell.self, forCellReuseIdentifier: PickerViewTableViewCell.idPickerViewCell)
 
         register(TextViewTableViewCell.self)
         register(DatePickerTableViewCell.self)
         register(PickerViewTableViewCell.self)
-
 
         delegate = self
         dataSource = self
@@ -22,6 +19,11 @@ final class EditingTableView: UITableView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    public func setUserModel(_ model: UserModel) {
+        userModel = model
+
     }
 }
 
@@ -36,10 +38,12 @@ extension EditingTableView: UITableViewDataSource {
                 return UITableViewCell()
             }
             cell.nameTextViewDelegate = self
-            if indexPath.row == 1 {
-                cell.configure(name: nameFields, scrollEnabled: false)
-            } else {
-                cell.configure(name: nameFields, scrollEnabled: true)
+
+            switch indexPath.row {
+            case 0: cell.configure(name: nameFields, scrollEnabled: true, value: userModel.firstName)
+            case 1: cell.configure(name: nameFields, scrollEnabled: false, value: userModel.secondName)
+            default:
+                cell.configure(name: nameFields, scrollEnabled: true, value: userModel.thirdName)
             }
             return cell
         case 3:

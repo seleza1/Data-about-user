@@ -35,9 +35,11 @@ final class TextViewTableViewCell: UITableViewCell {
         nameTextView.delegate = self
     }
 
-    public func configure(name: String, scrollEnabled: Bool) {
+    public func configure(name: String, scrollEnabled: Bool, value: String) {
         nameLabel.text = name
         nameTextView.isScrollEnabled = scrollEnabled
+        nameTextView.text = value
+        nameTextView.textColor = .black
     }
 }
 extension TextViewTableViewCell: UITextViewDelegate {
