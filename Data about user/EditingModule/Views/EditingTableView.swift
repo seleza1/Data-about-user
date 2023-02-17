@@ -6,9 +6,14 @@ final class EditingTableView: UITableView {
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
 
-        register(TextViewTableViewCell.self, forCellReuseIdentifier: TextViewTableViewCell.idTextViewCell)
-        register(DatePickerTableViewCell.self, forCellReuseIdentifier: DatePickerTableViewCell.idDatePicker)
-        register(PickerViewTableViewCell.self, forCellReuseIdentifier: PickerViewTableViewCell.idPickerViewCell)
+//        register(TextViewTableViewCell.self, forCellReuseIdentifier: TextViewTableViewCell.idTextViewCell)
+//        register(DatePickerTableViewCell.self, forCellReuseIdentifier: DatePickerTableViewCell.idDatePicker)
+//        register(PickerViewTableViewCell.self, forCellReuseIdentifier: PickerViewTableViewCell.idPickerViewCell)
+
+        register(TextViewTableViewCell.self)
+        register(DatePickerTableViewCell.self)
+        register(PickerViewTableViewCell.self)
+
 
         delegate = self
         dataSource = self
@@ -27,8 +32,12 @@ extension EditingTableView: UITableViewDataSource {
 
         switch indexPath.row {
         case 0...2:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: TextViewTableViewCell.idTextViewCell, for: indexPath) as? TextViewTableViewCell
-            else {
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: TextViewTableViewCell.idTextViewCell, for: indexPath) as? TextViewTableViewCell
+//            else {
+//                return UITableViewCell()
+//            }
+
+            guard let cell = self.dequeueReusableCell(TextViewTableViewCell.self) else {
                 return UITableViewCell()
             }
             cell.nameTextViewDelegate = self
@@ -40,15 +49,23 @@ extension EditingTableView: UITableViewDataSource {
             return cell
 
         case 3:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: DatePickerTableViewCell.idDatePicker, for: indexPath) as? DatePickerTableViewCell
-            else {
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: DatePickerTableViewCell.idDatePicker, for: indexPath) as? DatePickerTableViewCell
+//            else {
+//                return UITableViewCell()
+//            }
+
+            guard let cell = self.dequeueReusableCell(DatePickerTableViewCell.self) else {
                 return UITableViewCell()
             }
                 cell.configure(name: nameFields)
             return cell
         case 4:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: PickerViewTableViewCell.idPickerViewCell, for: indexPath) as? PickerViewTableViewCell
-            else {
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: PickerViewTableViewCell.idPickerViewCell, for: indexPath) as? PickerViewTableViewCell
+//            else {
+//                return UITableViewCell()
+//            }
+
+            guard let cell = self.dequeueReusableCell(PickerViewTableViewCell.self) else {
                 return UITableViewCell()
             }
                 cell.configure(name: nameFields)
