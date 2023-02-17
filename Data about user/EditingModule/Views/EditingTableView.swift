@@ -66,6 +66,23 @@ extension EditingTableView: UITableViewDataSource {
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         Resources.NameFields.allCases.count
     }
+
+    public func editUserModel() {
+        guard let firstNameCell = self.cellForRow(at: [0,0]) as? TextViewTableViewCell,
+              let secondNameCell = self.cellForRow(at: [0,1]) as? TextViewTableViewCell,
+              let thirdNameCell = self.cellForRow(at: [0,2]) as? TextViewTableViewCell,
+              let birthdayCell = self.cellForRow(at: [0,3]) as? DatePickerTableViewCell,
+              let genderCell = self.cellForRow(at: [0,4]) as? PickerViewTableViewCell else {
+            return
+        }
+
+        userModel.firstName = firstNameCell.getCellValue()
+        userModel.secondName = secondNameCell.getCellValue()
+        userModel.thirdName = thirdNameCell.getCellValue()
+        userModel.birthday = birthdayCell.getCellValue()
+        userModel.gender = genderCell.getCellValue()
+
+    }
 }
 
 extension EditingTableView: UITableViewDelegate {
