@@ -41,7 +41,13 @@ final class TextViewTableViewCell: UITableViewCell {
         nameTextView.text = value
         nameTextView.textColor = .black
     }
+
+    public func getCellValue() -> String {
+        nameTextView.text
+    }
+
 }
+
 extension TextViewTableViewCell: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
 
@@ -56,7 +62,7 @@ extension TextViewTableViewCell: UITextViewDelegate {
     }
 
     func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty { // ""
+        if textView.text.isEmpty { // or ""
             textView.text = "Введите данные"
             textView.textColor = .lightGray
         }

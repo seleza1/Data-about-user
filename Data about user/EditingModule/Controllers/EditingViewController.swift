@@ -26,7 +26,6 @@ final class EditingViewController: UIViewController {
         title = "Редактировать"
         view.backgroundColor = .white
 
-
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             title: "Сохранить",
             style: .plain,
@@ -52,9 +51,7 @@ final class EditingViewController: UIViewController {
     @objc func backButtonTapped() {
         presentChangeAlert { [weak self] value in
             if value {
-                print(self?.userModel)
                 self?.navigationController?.popViewController(animated: true)
-
             } else {
                 self?.navigationController?.popViewController(animated: false)
             }
@@ -71,8 +68,6 @@ final class EditingViewController: UIViewController {
         }
         return false
     }
-
-    
 }
 
 extension EditingViewController {

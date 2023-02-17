@@ -38,6 +38,10 @@ final class DatePickerTableViewCell: UITableViewCell {
         nameLabel.text = name
         datePicker.date = date
     }
+
+    public func getCellValue() -> String {
+        datePicker.date.getStringFromDate()
+    }
 }
 
 extension DatePickerTableViewCell {
