@@ -40,16 +40,15 @@ final class EditingViewController: UIViewController {
     }
 
     @objc func saveTapped() {
-//        let editUserModel = editingTableView.getUserModel()
-//        print(editUserModel == userModel )
-        
-        if authFields() {
+
+        let editUserModel = editingTableView.getUserModel()
+
+
+        if authFields(model: editUserModel) {
             presentSimpleAlert(title: "Выполнено", message: "ВсЁ ок")
         } else {
             presentSimpleAlert(title: "Ошибка", message: "Заполните ФИО, дата рождения, пол")
         }
-
-
     }
 
     @objc func backButtonTapped() {
@@ -67,21 +66,21 @@ final class EditingViewController: UIViewController {
                     firstVC.changeUserModel(model: editUserModel)
                     self?.navigationController?.popViewController(animated: true)
                 } else {
-                    self?.navigationController?.popViewController(animated: false)
+                    self?.navigationController?.popViewController(animated: true)
                 }
             }
         }
     }
 
-    private func authFields() -> Bool {
-        if userModel.firstName != "" ||
-            userModel.secondName != "" ||
-            userModel.birthday != "" ||
-            userModel.gender != "" ||
-            userModel.gender != "Не указано" {
-            return true
+    private func authFields(model: UserModel) -> Bool {
+        if model.firstName == "Введите данные" ||
+            model.secondName == "Введите данные" ||
+            model.birthday == "" ||
+            model.gender == "" ||
+            model.gender == "Не указано" {
+            return false
         }
-        return false
+        return true
     }
 }
 

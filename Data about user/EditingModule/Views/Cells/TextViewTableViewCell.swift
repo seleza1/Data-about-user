@@ -38,8 +38,8 @@ final class TextViewTableViewCell: UITableViewCell {
     public func configure(name: String, scrollEnabled: Bool, value: String) {
         nameLabel.text = name
         nameTextView.isScrollEnabled = scrollEnabled
-        nameTextView.text = value
-        nameTextView.textColor = .black
+        nameTextView.text = value == "" ? "Введите данные" : value
+        nameTextView.textColor = .lightGray
     }
 
     public func getCellValue() -> String {

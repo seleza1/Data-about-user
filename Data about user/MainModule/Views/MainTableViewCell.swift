@@ -12,7 +12,6 @@ final class MainTableViewCell: UITableViewCell {
         label.font = Resources.Fonts.avenirNextRegular(with: 16)
         label.numberOfLines = 0
 
-
         return label
     }()
 
@@ -39,7 +38,7 @@ final class MainTableViewCell: UITableViewCell {
 
     public func configure(name: String, value: String) {
         nameLabel.text = name
-        valueLabel.text = value
+        valueLabel.text = value == "" ? "Нет данных" : value
     }
 }
 
