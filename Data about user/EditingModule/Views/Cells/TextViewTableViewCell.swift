@@ -39,7 +39,7 @@ final class TextViewTableViewCell: UITableViewCell {
         nameLabel.text = name
         nameTextView.isScrollEnabled = scrollEnabled
         nameTextView.text = value == "" ? "Введите данные" : value
-        nameTextView.textColor = .lightGray
+        nameTextView.textColor = value == "" ? .lightGray : .black
     }
 
     public func getCellValue() -> String {
