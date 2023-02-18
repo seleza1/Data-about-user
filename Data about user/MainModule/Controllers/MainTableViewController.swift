@@ -35,7 +35,9 @@ final class MainTableViewController: UITableViewController {
         userModel = UserDefaultsHelper.getUserModel()
     }
 
-
+    public func changeUserModel(model: UserModel) {
+        print(model)
+    }
 }
 
 extension MainTableViewController {

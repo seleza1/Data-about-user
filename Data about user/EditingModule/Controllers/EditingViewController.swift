@@ -40,24 +40,35 @@ final class EditingViewController: UIViewController {
     }
 
     @objc func saveTapped() {
-        let edtidUserModel
-
-        print(editingTableView.getUserModel())
-//        if authFields() {
-//            presentSimpleAlert(title: "Выполнено", message: "ВсЁ ок")
-//        } else {
-//            presentSimpleAlert(title: "Ошибка", message: "Заполните ФИО, дата рождения, пол")
-//        }
+//        let editUserModel = editingTableView.getUserModel()
+//        print(editUserModel == userModel )
+        
+        if authFields() {
+            presentSimpleAlert(title: "Выполнено", message: "ВсЁ ок")
+        } else {
+            presentSimpleAlert(title: "Ошибка", message: "Заполните ФИО, дата рождения, пол")
+        }
 
 
     }
 
     @objc func backButtonTapped() {
-        presentChangeAlert { [weak self] value in
-            if value {
-                self?.navigationController?.popViewController(animated: true)
-            } else {
-                self?.navigationController?.popViewController(animated: false)
+
+        let editUserModel = editingTableView.getUserModel()
+
+        if editUserModel == userModel {
+            navigationController?.popViewController(animated: true)
+        } else {
+            presentChangeAlert { [weak self] value in
+                if value {
+                    guard let firstVC = self?.navigationController?.viewControllers.first as? MainTableViewController else {
+                        return
+                    }
+                    firstVC.changeUserModel(model: editUserModel)
+                    self?.navigationController?.popViewController(animated: true)
+                } else {
+                    self?.navigationController?.popViewController(animated: false)
+                }
             }
         }
     }
