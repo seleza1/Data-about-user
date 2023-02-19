@@ -11,7 +11,6 @@ final class MainTableViewController: UITableViewController {
         setupView()
         getUserModel()
 
-        tableView.register(MainTableViewCell.self )
     }
 
     private func setupView() {
@@ -51,26 +50,5 @@ final class MainTableViewController: UITableViewController {
     }
 }
 
-extension MainTableViewController {
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(MainTableViewCell.self) else {
-            return UITableViewCell()
-        }
-        let nameFields = Resources.NameFields.allCases[indexPath.row].rawValue
-        let value = UserDefaultsHelper.getUserValue(Resources.NameFields.allCases[indexPath.row].rawValue)
-        cell.configure(name: nameFields, value: value )
 
-        return cell
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        Resources.NameFields.allCases.count
-    }
-}
-
-extension MainTableViewController {
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        indexPath.row == 1 ? UITableView.automaticDimension : 44
-    }
-}
 

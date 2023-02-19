@@ -45,7 +45,6 @@ final class TextViewTableViewCell: UITableViewCell {
     public func getCellValue() -> String {
         nameTextView.text
     }
-
 }
 
 extension TextViewTableViewCell: UITextViewDelegate {
