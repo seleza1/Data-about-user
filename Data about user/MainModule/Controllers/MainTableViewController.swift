@@ -49,6 +49,7 @@ final class MainTableViewController: UITableViewController {
     public func changeUserModel(model: UserModel) {
         saveEditModel(model: model)
         userModel = model
+        setValueArray()
         tableView.reloadData()
     }
 }
