@@ -72,6 +72,16 @@ extension MainTableViewController {
     public func setValueArray(_ array: [String]) {
         valueArray = array
     }
+
+    public func getValueArray() -> [String] {
+        var valueArray = [String]()
+
+        for key in Resources.NameFields.allCases {
+            let value = UserDefaultsHelper.getUserValue(key.rawValue)
+            valueArray.append(value)
+        }
+        return valueArray
+    }
 }
 
 extension MainTableViewController {
