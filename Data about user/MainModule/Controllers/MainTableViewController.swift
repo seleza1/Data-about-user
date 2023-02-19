@@ -11,6 +11,7 @@ final class MainTableViewController: UITableViewController {
 
         setupView()
         getUserModel()
+        setValueArray()
 
         tableView.register(MainTableViewCell.self )
     }
@@ -58,7 +59,6 @@ extension MainTableViewController {
             return UITableViewCell()
         }
         let nameFields = Resources.NameFields.allCases[indexPath.row].rawValue
-        //let value = UserDefaultsHelper.getUserValue(Resources.NameFields.allCases[indexPath.row].rawValue)
         let value = valueArray[indexPath.row]
         cell.configure(name: nameFields, value: value )
 
@@ -81,6 +81,12 @@ extension MainTableViewController {
             valueArray.append(value)
         }
         return valueArray
+    }
+
+    private func setValueArray() {
+        let valueArray = getValueArray()
+        setValueArray(valueArray)
+        tableView.reloadData()
     }
 }
 
